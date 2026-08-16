@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { Icon } from '../components/Icon'
-import { site } from '../data/site'
+import { site, waLink } from '../data/site'
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 </span>
                 <div>
                   <h2 className="text-sm font-semibold text-gray-900">WhatsApp</h2>
-                  <a href={`tel:${site.phone.replace(/\s/g, '')}`} className="text-sm text-gray-600 hover:text-primary-600 transition-colors">
+                  <a href={waLink()} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-primary-600 transition-colors">
                     {site.phone}
                   </a>
                 </div>

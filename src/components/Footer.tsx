@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Icon } from './Icon'
 import { useSectionScroll } from '../hooks/useSectionScroll'
-import { site } from '../data/site'
+import { site, waLink } from '../data/site'
 
 type FooterLink =
   | { name: string; type: 'section'; id: string }
@@ -122,8 +122,8 @@ export default function Footer() {
                 <Icon name="mail" className="w-4 h-4 text-gray-500" />
                 <span>{site.email}</span>
               </a>
-              <a href={`tel:${site.phone.replace(/\s/g, '')}`} className="flex items-center gap-2.5 text-gray-400 hover:text-white transition-colors">
-                <Icon name="phone" className="w-4 h-4 text-gray-500" />
+              <a href={waLink()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-gray-400 hover:text-white transition-colors">
+                <Icon name="whatsapp" className="w-4 h-4 text-gray-500" />
                 <span>{site.phone}</span>
               </a>
               <div className="flex items-center gap-2.5 text-gray-400">
@@ -179,13 +179,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <div className="mt-12 border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
           <p>&copy; {year} DAJHO. Todos los derechos reservados.</p>
-          <p className="flex items-center gap-1.5 text-xs text-gray-600">
-            Hecho con
-            <Icon name="heart" className="w-3.5 h-3.5 text-red-500" />
-            para emprendedores ecuatorianos
-          </p>
         </div>
       </div>
     </footer>

@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from './Icon'
-import { site } from '../data/site'
+import { site, waLink } from '../data/site'
 
 export default function Contact() {
   const [email, setEmail] = useState('')
@@ -90,6 +90,19 @@ export default function Contact() {
                 </form>
               )}
 
+              {/* CTA WhatsApp */}
+              <div className="mt-10 text-center">
+                <a
+                  href={waLink('Hola DAJHO 👋, me gustaría recibir más información sobre la plataforma.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-shine inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-base font-bold text-white shadow-lg hover:brightness-105"
+                >
+                  <Icon name="whatsapp" className="w-5 h-5" />
+                  Escríbenos por WhatsApp
+                </a>
+              </div>
+
               {/* Contact info */}
               <div className="mt-12 grid gap-6 sm:grid-cols-3 border-t border-white/10 pt-10">
                 <div className="text-center">
@@ -106,7 +119,7 @@ export default function Contact() {
                     <Icon name="chat" className="w-5 h-5" />
                   </div>
                   <h3 className="text-sm font-semibold text-white">WhatsApp</h3>
-                  <a href={`tel:${site.phone.replace(/\s/g, '')}`} className="mt-1 text-sm text-primary-200 hover:text-white transition-colors block">
+                  <a href={waLink()} target="_blank" rel="noopener noreferrer" className="mt-1 text-sm text-primary-200 hover:text-white transition-colors block">
                     {site.phone}
                   </a>
                 </div>

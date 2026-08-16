@@ -18,7 +18,7 @@ export default function ScrollToTop() {
       onClick={scrollTop}
       aria-label="Volver arriba"
       title="Volver arriba"
-      className={`scroll-top fixed bottom-6 right-6 z-40 transition-all duration-300 ${
+      className={`scroll-top fixed bottom-24 right-6 z-40 transition-all duration-300 ${
         visible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-6 pointer-events-none'

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Icon } from './Icon'
+import { waLink } from '../data/site'
 import { useSectionScroll } from '../hooks/useSectionScroll'
 
 export default function Hero() {
@@ -67,6 +68,16 @@ export default function Hero() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
                 </svg>
               </button>
+              <a
+                href={waLink('Hola DAJHO 👋, me gustaría recibir más información sobre la plataforma.')}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Escríbenos por WhatsApp"
+                title="Escríbenos por WhatsApp"
+                className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-[#25D366] text-white shadow-lg shadow-green-200 hover:-translate-y-1 hover:shadow-green-300 transition-all duration-300"
+              >
+                <Icon name="whatsapp" className="w-7 h-7" />
+              </a>
             </div>
 
             {/* Star rating */}
