@@ -1,0 +1,18 @@
+# Configuración de despliegue para Netlify
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA: sirve index.html para todas las rutas (requerido para /blog, /contacto, etc.)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cabeceras básicas de seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
