@@ -1,11 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Icon } from './Icon'
-import { waLink } from '../data/site'
-import { useSectionScroll } from '../hooks/useSectionScroll'
 
 export default function Hero() {
-  const scrollToSection = useSectionScroll()
-
   return (
     <section id="inicio" className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden scroll-mt-16">
       {/* Background gradient + pattern */}
@@ -49,7 +45,7 @@ export default function Hero() {
               ))}
             </ul>
 
-            {/* CTA buttons (uiverse: botón 3D + botón con flecha) */}
+            {/* CTA principal */}
             <div className="mt-10 flex flex-col sm:flex-row items-start gap-5">
               <Link
                 to="/contacto"
@@ -58,61 +54,11 @@ export default function Hero() {
                 <Icon name="headset" className="w-5 h-5" />
                 Contáctanos
               </Link>
-              <button
-                type="button"
-                onClick={() => scrollToSection('como-funciona')}
-                className="btn-arrow inline-flex items-center rounded-xl border-2 border-gray-300 bg-white px-8 py-4 text-base font-semibold text-gray-700 hover:border-primary-500 hover:text-primary-600"
-              >
-                <span>Ver demo (2 min)</span>
-                <svg className="btn-arrow-icon w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                </svg>
-              </button>
-              <a
-                href={waLink('Hola DAJHO 👋, me gustaría recibir más información sobre la plataforma.')}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Escríbenos por WhatsApp"
-                title="Escríbenos por WhatsApp"
-                className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-[#25D366] text-white shadow-lg shadow-green-200 hover:-translate-y-1 hover:shadow-green-300 transition-all duration-300"
-              >
-                <Icon name="whatsapp" className="w-7 h-7" />
-              </a>
             </div>
 
-            {/* Star rating */}
-            <div className="mt-10 flex items-center gap-3 text-sm text-gray-600">
-              <div className="flex text-yellow-400 text-lg tracking-wide">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.364 1.118l1.286 3.958c.3.922-.755 1.688-1.539 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.784.57-1.838-.196-1.539-1.118l1.286-3.958a1 1 0 00-.364-1.118L2.05 9.385c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.958z" />
-                  </svg>
-                ))}
-              </div>
-              <span>4.8 de 5 en Google Play y App Store</span>
-            </div>
 
-            {/* Stats counters */}
-            <div className="mt-8 flex flex-wrap gap-8">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary-50 text-primary-600">
-                  <Icon name="store" className="w-5 h-5" />
-                </span>
-                <div>
-                  <div className="font-bold text-lg text-gray-900">+10.000</div>
-                  <div className="text-xs text-gray-500">negocios usan DAJHO</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary-50 text-primary-600">
-                  <Icon name="flag" className="w-5 h-5" />
-                </span>
-                <div>
-                  <div className="font-bold text-lg text-gray-900">+1</div>
-                  <div className="text-xs text-gray-500">país, ¡Ecuador!</div>
-                </div>
-              </div>
-            </div>
+
+
           </div>
 
           {/* Right column: device mockup (glassmorphism) */}

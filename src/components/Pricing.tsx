@@ -102,10 +102,10 @@ export default function Pricing() {
             Elige el plan que mejor se ajuste a las necesidades de tu negocio.
           </p>
 
-          {/* Segmented control con píldora deslizante (uiverse: toggle animado) */}
+          {/* Segmented control con píldora deslizante (grid de 3 columnas iguales) */}
           <div
             ref={segmentRef}
-            className="segmented mt-8 inline-flex bg-white rounded-full border border-gray-200 shadow-sm"
+            className="segmented mt-8 inline-grid w-full max-w-md grid-cols-3 bg-white rounded-full border border-gray-200 shadow-sm"
             role="tablist"
             aria-label="Periodo de facturación"
           >
@@ -123,14 +123,14 @@ export default function Pricing() {
                 role="tab"
                 aria-selected={billing === key}
                 onClick={() => handleBilling(key)}
-                className={`segmented__option px-5 py-2 rounded-full text-sm font-medium ${
+                className={`segmented__option inline-flex items-center justify-center gap-1 px-1.5 sm:px-3 py-2 rounded-full text-[13px] sm:text-sm font-medium whitespace-nowrap ${
                   billing === key ? 'text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 {label}
                 {badge && (
                   <span
-                    className={`ml-1.5 text-xs px-1.5 py-0.5 rounded ${
+                    className={`text-[10px] sm:text-xs px-1.5 py-0.5 rounded ${
                       billing === key ? 'bg-white/25 text-white' : 'bg-green-100 text-green-700'
                     }`}
                   >

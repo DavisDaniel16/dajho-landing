@@ -34,6 +34,14 @@ body {
   border-radius: 4px;
 }
 
+/* Los elementos interactivos deben mostrar cursor de puntero (pre-delivery check) */
+button:not(:disabled),
+[role="button"]:not(:disabled),
+[role="tab"]:not(:disabled),
+[role="option"]:not(:disabled) {
+  cursor: pointer;
+}
+
 /* Animaciones de entrada */
 .animate-fade-up {
   opacity: 0;
@@ -174,13 +182,13 @@ body {
 /* ---------- Segmented control con píldora deslizante ---------- */
 .segmented {
   position: relative;
-  display: inline-flex;
   padding: 4px;
 }
 .segmented__thumb {
   position: absolute;
   top: 4px;
   bottom: 4px;
+  left: 4px;
   width: var(--seg-width, 33.333%);
   background: var(--color-primary-600);
   border-radius: 9999px;
@@ -400,7 +408,7 @@ body {
 
 /* ---------- Botón "volver arriba" (uiverse: scroll to top) ---------- */
 .scroll-top {
-  position: relative;
+  position: fixed;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -436,7 +444,7 @@ body {
 
 /* ---------- Botón flotante de WhatsApp ---------- */
 .wa-fab {
-  position: relative;
+  position: fixed;
   display: inline-flex;
   align-items: center;
   justify-content: center;
